@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		//o this fai que automaticamente as variables sexan atributos ou propiedades e as funcion sexan metodos
+
+		var Caixa = function(ancho,alto,largo){
+			//dentro dunha funcion constructor o igual que nunha clase normal o uso
+			// a orde de declaracion de atributos e metodos non influe en que o interprete
+			//non recoñeza xa que carga todo en memoria
+
+			//non é o mesmo que en programacion estructurada usar unha funcion antes de usala
+			this.volumenCaixa = volumen(ancho,alto,largo);
+			//o non usarmos o this para asginarmola a instancia esta funcion so é acesivel dende
+			//o interior da funcion construcntor
+			function volumen(a,b,c){
+				return a*b*c;
+			}
+			var x = 5;
+			this.v = x;
+		}
+
+		var c = new Caixa(1,2,4);
+
+		document.write(c.volumenCaixa);
+		//como vemos non é acesivel dende a instancia o dende fora da funcion constructor
+		//coas variables é igual sen o this non son acesiveis dende fora xa que non estan asignados a instacia
+		//document.write(c.volumen());
+		//variable privada
+		document.write(c.x);
+		//propiedade publica
+		document.write(c.v);
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

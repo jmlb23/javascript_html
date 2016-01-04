@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		function informeBoton(botonId, botonNome, botonValor){
+			var userMes1 = "Id do Botón: " + botonId + "\n";
+			var userMes2 = "Nome do Botón: " + botonNome + "\n";
+			var userMes3 = "Valor do Botón: " + botonValor + "\n";
+			alert(userMes1+userMes2+userMes3); //xa chama o toString automaticamente
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="valor" id="idBtn" name="boton esquerdo" onClick="informeBoton(this.id,this.name,this.value);">
+	<input type="button" value="valor1" id="idBtn2" name="boton centro" onClick="informeBoton(this.id,this.name,this.value);">
+	<input type="button" value="valor2" id="idBtn3" name="boton dereito" onClick="informeBoton(this.id,this.name,this.value);">
+</body>
+</html>

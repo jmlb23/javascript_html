@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		//conversor de c a f
+		function convirte(valor){
+			//asi sabemos se se pasou un valor xa que estara definida
+			//como en php temos o == != === e !==
+			
+			if(valor !== undefined){
+				//neste caso a prioridade é correcta para o que queremos expresar
+				//a multiplicacion e a division teñen a mesma e o mesmo tempo maior que a suma
+				//polo tanto executase de esquerda a dereita en caso de igualdade na preferencia
+				valor = (((valor * 9) / 5) + 32); //para maior claridade na lectura sen ter que recurrir a precedencia é mellor usar os parenteses
+				alert(valor);
+			}
+		}
+
+		convirte(32);
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		//temos eventos disparados polo navegador
+		//ou polo usuario
+
+		//os xestores de eventos vinculan unha acion cun coidigo a relizar cando se realiza esa acion
+
+		//temos os xestores inline que van no mesmo elemento do dom
+		//e os handlers de codigo
+	</script>
+</head>
+<body>
+
+		<!-- podemos observar que a loxica mesturase coa vista -->
+	<!--<input id="btn" type="button" value="pulsa" onclick="alerta();" />	-->
+	<input id="btn" type="button" value="pulsa" />	
+	<script>
+		//o problema da carga do xestor antes do renderizado do elemento
+		//solucionase poñendo o script o final de todo do body
+		//ou envolvendo cun closure ou funcion anonima  e asignando o onload de window
+		//para segurarnos de que cando se carge a paxina se asigne todo de forma correcta
+		function alerta(){
+			alert("pulsaches");
+		}
+		//vemos que asociamos un delegado closure ou funcion anonima co seu handler onclick
+		//que sera o que se execute cando se clique no boton
+		//pasamoslle o nome da funcion
+		//os handlers non son mais que atributos que teñen asociaoda o que se vai a reliazar cando
+		//se dispare o evento
+		//igual que un delegate en c# ou un punteiro a unha funcion en c++ e c
+		//asociamos unha funcion que cando se produza o evento executarase
+		var boton = document.getElementById('btn').onclick = alerta;
+	</script>
+
+</body>
+</html>

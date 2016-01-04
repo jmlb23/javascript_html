@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		//encapsulamos o construcotor nunha variable
+		var Persoa = function constructorPersoa(nome){
+			this.nome = nome;//agregamos o atributo da instancia e asignamoslle o que se lle pase o constructor
+			//this.info; //non da erro pero da undefined significa que esta declarada pero non ten un valor
+			this.info= ''; //non se incializa a valor por defecto porque non se coñece o tipo por iso existe undefined
+
+
+			this.get = function(){
+				return this.nome;
+			}
+
+			this.setInfo = function(info){
+				this.info = info;
+			}
+			this.getInfo = function(){
+				return this.info;
+			}
+
+			this.defecto = function(){
+				alert(this.info);
+			}
+		}
+
+		var p = new Persoa('pepe');
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

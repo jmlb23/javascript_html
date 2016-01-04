@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		td{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		//navigator danos as caracteristicas do navegador que abriu a paxina
+		//usase cada vez menos
+		//obxeto de window
+		//como en php podemos iterar sobre os atributos dos obxetos 
+		//usando a notacion de array para coller o nome e o valor
+		document.write("<table style='border: 1px solid black'>");
+		for(var i  in navigator) document.write("<tr><td>"+i+"</td><td>"+navigator[i]+"</td></tr>");
+		document.write("</table>");
+	</script>
+</body>
+</html>

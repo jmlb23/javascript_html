@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		//json é unha forma de serializar os obxetos javascript
+		//en forma key:value
+
+		var json = {
+			"hola":"json"
+		}
+		//eval evalua un string e intenta executar a expresion ou codigo contida neste string
+		//pode ser demasiado verbose a sitaxe con eval
+		var exp = eval();
+
+		var user = '{"nome":"pepe","idade":24}';
+		//por se pasamos o nome dunha funcion e a sua definicion etc;
+		var obxeto = eval('('+ user +')');
+		//esta deserializa o json a un obxeto sin necesidade de parentese
+		var obxeto = JSON.parse(user);
+		//funciona perfectamente
+		document.write(obxeto.nome+" "+obxeto.idade+"<br/>");
+		//actualmente os navegadores contan con soporte nativo de json facendo que o uso de eval sexa arcaico
+
+		var obxeto_serializar = new Object();
+
+		obxeto_serializar.altura = 1.85;
+		obxeto_serializar.peso = 100;
+		
+		//xenera o json correspondente o obxeto que lle pasamos como parametro
+		//o json podemos aceder os key e values coa notacion de array asociativo
+		//é como un array asociativo en php ou un dictionary en python
+		document.write(JSON.stringify(obxeto_serializar));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

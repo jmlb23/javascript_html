@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<script>
+		//o ambito como noutros linguaxes é moi importante
+
+		//unha variable declarada nun ambito inferior non existe no superior
+		//pero unha variable declarada no superior si existe no inferior
+
+		//cando usamo a palabra var fora dunha funcion declaramos un atributo na instancia actual que é window
+		var x = 10;
+		//var declara as variables
+		//a varible do ambito superior queda oculta pola de ambito inferior se sedeclaran co mesmo nome nos dous ambitos
+		//son independentes
+		//xa que unha é unha variable local dun metodo ou funcuion e outra é un atributo da clase
+		//fora dese ambito a variable non existe
+
+		//aqui como sempre estamos no obxeto window e non existe a palabra global
+		//teriamos que aceder mediante o obxeto window ou this o valor da variable do ambito superior
+		function valor(){
+			var x = 100;
+
+			alert(x);
+			alert(this.x);
+			
+			alert(window.x);
+		}
+		
+		valor();
+
+
+		function agrega(sub, tasa){
+			var total  = sub * ( 1 + ( tasa / 100 ) );
+			return total;
+		}
+		
+	</script>
+</head>
+<body>
+	<script>
+		var valor = agrega(450, 20);
+		alert(valor);
+		
+	</script>
+</body>
+</html>

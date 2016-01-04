@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		//un metodo moi util e o de document getElementById pasandolle como cadea o id devolve o elemento que queiramos
+		//e estes teñen un atributo moi interesante que é innerHTML que permite manipular o contido deste
+
+		//da erro porque ainda non esta creado
+		//document.getElementById('div').innerHTML = '<b>hola mundo</b>';
+	</script>
+</head>
+<body>
+	<div id="div"></div>
+	<script>
+		
+		var v = document.getElementById('div');
+		v.innerHTML = '<b>hola mundo</b> estamos manipulando o dom e o contido dos elementos';
+		//temos typeof coma en c c++ e c#
+		document.write(typeof v);
+		//atributo do obxeto window
+		//window.history //temos un atributo que representa as urls visitadas
+			//ten o atributo length
+			//ten os atributos forward back e go
+			//go permite ir a unha url dada ou varios numeros atras na lista de history
+		function seguinte(){
+			window.history.forward();
+		}
+	</script>
+
+	
+</body>
+</html>

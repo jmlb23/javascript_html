@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		
+	</script>
+	<!--
+	onclick //cando clicamos sobre o elemento asociado
+	onMouseOver //cando estamos enriva do elemento asociado
+	onMouseOut //cando saimos de enriva do elemento asociado
+	-->
+	<!-- usar os atributos onXXX estan deprecadas -->
+	<p onClick="alert(this.innerHTML)" id="hola">
+		aqui vai pasar algo cun click
+	</p>
+	<!-- ollo coas mallusculas nos atributos xa que en xhtml temos que poñelo todo en minusculas 
+	     coidado cos elementos de bloque xa que ocupan toda a liña e pode facer un efecto raro
+	-->
+	<input type="button" value="pulsa mamon" onClick="document.getElementById('hola').innerHTML = 'merda'"/>
+	<p 
+		onMouseOver="this.innerHTML ='estan encima'"
+		onMouseOut="this.innerHTML='saiches da area'"
+	> pasa algo se pos o rato encima </p>
+	
+	<!-- podemos omitir this xa que é como se estivesemos sobre o obxeto actual e colle o atributo deste a instancia neste momento -->
+	<img src="img.png" onMouseOver="this.src='img2.gif'" onMouseOut="this.src='img.png'" alt="cousas"/>
+</body>
+</html>

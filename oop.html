@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		//obxeto preconstruido do que derivan todos os obxetos
+		obxeto = new Object();
+		obxeto.info = "obxeto basico"; //engadimos a instancia dinamicamente un atributo
+		//obviamente temos que usar o nome que encapsula a funcion
+		//o nome da funcion podemos obvialo
+		obxeto.func = function myfunc(){//podemos asignar un metodo a unha instancia dun obxeto mediante
+						//a creacion directa da funcion ou mediante o nome da mesma non da chamada
+						//aqui o nome sen os parenteses representa a referencia o metodo
+						//se non gardariamos o return non a definicion
+			//this usamolo na instancia para chamar o atributo ou funcion da instancia actual creada dinamicamente ou non
+			//se non o usamos o estar engadindo a instacia dinamicamente mira no ambito da funcion e da erro
+			//con this miramos no ambito da instacia
+			//se non vai dar undefined xa que neste contexto non esta definida
+			alert(this.info);
+		}
+		//podemos obviar o nome xa que o que se usa é o nome do campo que encapsula a funcion anonima
+		//como se definisimos unha funcion anonima en programacion estructurada en javascript
+		obxeto.func2 = function(){
+			alert("hola dende un metodo que encapsula a unha funcion anonima");
+		}
+
+
+		var funcA = function(){
+			alert("anonima estructurada");
+		};
+	</script>
+</head>
+<body>
+	<!-- javascript non é unha linguaxe orientada puramente a obexetos
+	     é unha linguaxe orientada a portotipos
+	     non existen as clases como tal antes de ecma6 pero si as funcions contructor
+	     que con ecmascript6 engade as clases pero en principio
+	     as funcions actuan como clases en si mesmas facendo a funcion de constructores en si mesmas
+	-->
+	<input type="button" value="chama" onclick="obxeto.func()" />
+	<input type="button" value="chama funcion anonima metodo" onclick="obxeto.func2()" />
+	<input type="button" value="funcion anonima" onclick="funcA()" />
+</body>
+</html>

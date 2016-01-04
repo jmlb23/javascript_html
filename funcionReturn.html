@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+
+		function cubo(x){
+			//no obxeto actual
+			return x * x * x;
+		}
+		
+		valor = cubo(3);
+	</script>
+
+	<script>
+		function areaCirc(r){
+			//na instacia acutal adicionamos un atributo dinamicamente
+			//e facemos uso dela
+			//nas linguaxes debilmente tipadas e dinamicas podemos adicionar a instancia dinamicamente atributos ou metodos
+			
+			this.r = 'merda';
+			return Math.PI * (r * r);
+		}
+	</script>
+</head>
+<body>
+	<script>
+		//recollemos o valor actual que ten o atributo
+		var r = this.r;
+		document.write(areaCirc(5)+ "valor "+r);
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		//o metodo anterior non é moi util se queremos crear varios obxetos xa que temos que copiar un a un todos os datos
+		//e metodos que pasamos o obxeto creado de maneira dinamica
+		//para esto existen as funcions constructors
+		//usamos this dentro desta para indicar e vincular o contido ca instancia cando se realice
+		//podemos considerar esto como uhna clase atipica
+		//o constructor define a clase en si xa que pode recibir parametros etc...
+		
+		function meuObxeto(){
+			//atributo
+			this.info="informacion xeral"
+			this.amosa = function(){
+				alert(this.info);
+			}
+			//setter
+			this.setInfo = function(info){
+				this.info = info;
+			}
+		}
+
+		var v = new meuObxeto();
+	</script>
+</head>
+<body>
+	<input type="button" value="amosa info" onclick="v.amosa()" />
+</body>
+</html>

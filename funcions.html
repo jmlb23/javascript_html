@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- porque definir o script no head?? aseguramos que asi calquer elemento do body que use recursos do script esten xa definidos -->
+	<script>
+		function hola(){ //poñer os argumentos é optativo ainda que se se poñen e non se pasan da un erro se pasamos de mais non falla simplemente ignoraos
+				//os argumentos pasados estan no array arguments na funcion
+			alert(arguments.length);
+			alert('hola');
+		}
+		function adios(){
+			alert('adios');
+		}
+		//como en calquer linguaxe temos que chamar a funcion non vale solo con declarala
+		//pode ser de forma autoexecutable ()()
+		//recordar que js é unha linguaxe casesensitive non como php 
+		
+	</script>
+
+</head>
+<body>
+	
+	<input type="button" value="clica" onClick="hola();">
+	<input type="button" value="clica 2" onClick="adios();">
+</body>
+</html>

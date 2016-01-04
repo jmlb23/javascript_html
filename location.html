@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+
+		//temos en window e documente o obxeto ou atributo location
+		//co metodo replace reemplazamos no historial a paxina
+		//ten os atributos 
+		/*
+		* href protocol host hostname port pathname search hash // que é a representacion que esta fai da url
+		*/
+
+		function leva(){
+			//a primeira non volve a aparecer no historial xa que foi trocada pola do replace
+			//levanos e reemplaza a anterior que se visitou
+			//window.location.href= "http://www.slashdot.org"
+			//document.location.replace("http://www.debian.org");
+			document.location.reload(); //recarga a paxina na cache
+			document.location.reload(true) //recarga dende o servidor
+		}
+
+
+	</script>
+
+	<input type="button" onclick="leva();" value="leva" />
+</body>
+</html>

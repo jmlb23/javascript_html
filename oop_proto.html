@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		//en js podemos implementar a herencia mediante prototypes
+		//permite engadir dinamicamente a instancia metodos propiedades
+		//sen que as instancias xa existentes se vexan afectadas
+		//igual tamen podemos omitir o nome na funcion constructor
+		var Coche = function(cor,marca,cw){
+			this.cor = cor;
+			this.marca = marca;
+			this.cw = cw;
+			
+			this.toString = function (){
+				return this.cor+" "+this.marca+" "+this.cw;
+			}
+		}
+
+		var coche1 = new Coche('azul','ferrari',500);
+		var coche2 = new Coche('negro/vermello','buggati',1000);
+		//modificamos a clase e engadimos o que sexa independentemente das instacias xa existentes
+		//esto en java non se pode facer porque as funcions non teñen tipo, a diferencia de php(closures) c#(delegates), e por iso
+		//en java 8 incluese a idea dos interfaces funcionais que veñen a suplir esta carencia
+		Coche.prototype.pita = function(){
+			alert("piiiiii dende o coche de marca "+this.marca);
+		}
+
+		//tamen podemos crear xerarquias ou herencias gracias a prototype
+		var Domestico = function(){
+			this.nome='';
+			this.animal = '';
+
+			this.setNome = function(nome){
+				this.nome = nome;
+			}
+			this.setAnimal = function(animal){
+				this.animal = animal;
+			}
+		}
+
+		var gato = new Domestico();
+		gato.setNome('mico');
+		gato.setAnimal('gato');
+			
+		//moi interesante o uso de poder crear funcions contructor apartir de outra para emular a herencia
+		//creamos unha clase que o seu prototipo vai ser igual a de domestico
+		Can.prototype = new Domestico();
+		//recuperamos a definicion da funcion constructor que temos gardada no prototype de Can e extendemola
+		//temos en prototype a definicion da "clase en si" e cando definamos Can extenderemos a Domestico
+		function Can(){
+			this.raza = '';
+			this.setRaza = function(raza){
+				this.raza = raza;
+			}
+			this.amosaInfo = function(){
+				alert(this.nome +" é o seu nome "+this.raza+" é a sua raza");
+			}
+		}
+		var c = new Can();
+		c.setRaza("canis lupus");
+		c.setNome("barbas");
+		c.amosaInfo();
+		//podemos tamen extender obxetos do core de javascript xa preconstruidos
+
+		String.prototype.reverso = function(){
+			var saida = '';
+			for(i = this.length - 1; i>=0; i--){
+				saida += this.charAt(i);
+			}
+
+			return saida;
+		}
+
+		document.write("hola".reverso());
+	</script>
+</head>
+<body>
+	<!-- como podemos observar non fai falla engadir nada a cada instancia
+	     e coma se xa o definisemos na propia funcion constructor -->
+	<input type="button" value="instancia 1" onclick="coche1.pita();" />
+	<input type="button" value="instancia 2" onclick="coche2.pita();" />
+</body>
+</html>

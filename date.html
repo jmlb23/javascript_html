@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		function data(){
+			var saida = "";
+			var arrayMeses = [
+				'xaneiro',
+				'febreiro',
+				'marzo',
+				'abril',
+				'mayo',
+				'junio',
+				'julio',
+				'agosto',
+				'septembro',
+				'outubro',
+				'novembro',
+				'decembro'
+			];
+			var ahora = new Date();
+			saida += " <br /> fecha: "+ ahora.getDate();
+			saida += " <br /> mes: "+ arrayMeses[ahora.getMonth()];
+			saida += " <br /> ano: "+ ahora.getFullYear();
+			saida += " <br /> hora: "+ ahora.getHours();
+			saida += " <br /> minutos: "+ ahora.getMinutes();
+			saida += " <br /> segundos: "+ ahora.getSeconds();
+			document.getElementById('data').innerHTML = saida;
+		}
+
+	</script>
+</head>
+<body>
+	<p id="data">
+	</p>
+	<script>
+		//temos que chamalo despois de que se carge o p se non, é como se non existise
+		
+		data();
+	</script>
+</body>
+</html>
